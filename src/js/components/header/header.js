@@ -7,6 +7,7 @@ export default () => {
     <div className="container">
       <ul className="nav navbar-nav navbar-left">
         <li><Link to="/ideas">Ideas</Link></li>
+        <li><Link to="/add-idea">Add idea</Link></li>
       </ul>
     </div>
   </nav>
