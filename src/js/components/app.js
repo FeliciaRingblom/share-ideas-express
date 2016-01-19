@@ -1,11 +1,12 @@
 import React from 'react';
+import Header from './header/header';
 
 require('../../sass/_app.scss');
 
 const App = (props) => {
   return (
     <div className="container">
-      <h1>Share Ideas</h1>
+      <Header />
         { props.children }
     </div>
   );
