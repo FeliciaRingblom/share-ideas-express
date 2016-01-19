@@ -2,6 +2,8 @@ const noInitialIdeas = 9;
 
 const IdeaAPI = {
   ideaItems: [],
+  increasePoints( item ) { item.points++; },
+  decreasePoints( item ) { item.points--; },
   init() {
     for ( let i = 1; i < noInitialIdeas; i++ ) {
       this.ideaItems.push( {
