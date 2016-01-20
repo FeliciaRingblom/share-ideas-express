@@ -4,11 +4,12 @@ import Home from './components/home/home';
 import IdeaList from './components/idea/ideaList';
 import IdeaDetails from './components/idea/ideaDetails';
 import ManageIdea from './components/idea/manageIdea';
-import { IndexRoute, browserHistory, Router, Route } from 'react-router';
+import { IndexRoute, Router, Route } from 'react-router';
+import history from './history';
 
 export default () => {
   return (
-     <Router history={ browserHistory }>
+     <Router history= { history }>
       <Route path="/" component = { App }>
         <IndexRoute component={ Home }/>
         <Route path="ideas" component={ IdeaList }/>

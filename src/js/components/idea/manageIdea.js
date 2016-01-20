@@ -3,6 +3,7 @@ import IdeaForm from './ideaForm';
 import IdeaActions from '../../actions/ideaActions';
 import Toastr from 'toastr';
 import IdeaStore from '../../stores/ideaStore';
+import history from '../..//history';
 
 class ManageIdea extends React.Component {
   constructor(props) {
@@ -52,8 +53,10 @@ class ManageIdea extends React.Component {
 
     if (this.state.idea.id) {
       IdeaActions.updateIdea(this.state.idea);
+      history.replaceState(null, `/idea/${this.state.idea.id}`);
     } else {
       IdeaActions.createIdea(this.state.idea);
+      history.replaceState(null, '/ideas');
     }
 
     this.setState({dirty: false});
