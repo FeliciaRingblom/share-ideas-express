@@ -21,5 +21,10 @@ export default {
     dispatch({
       actionType: ActionTypes.UPDATE_IDEA, idea
     });
+  },
+  deleteIdea( idea ) {
+    dispatch({
+      actionType: ActionTypes.DELETE_IDEA, idea
+    });
   }
 };

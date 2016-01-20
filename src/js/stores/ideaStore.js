@@ -36,6 +36,9 @@ const IdeaStore = Object.assign(EventEmitter.prototype, {
     case ActionTypes.ADD_IDEA:
       IdeaAPI.addIdeaItem( action.idea );
       break;
+    case ActionTypes.DELETE_IDEA:
+      IdeaAPI.removeIdeaItem( action.idea );
+      break;
     default:
       break;
     }
