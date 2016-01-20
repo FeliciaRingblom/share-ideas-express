@@ -3,11 +3,14 @@ let lastUsedId = 0;
 
 const IdeaAPI = {
   ideaItems: [],
-  increasePoints( item ) { item.points++; },
-  decreasePoints( item ) { item.points--; },
+  removeIdeaItem( item ) {
+    this.ideaItems.splice( this.ideaItems.findIndex( i => i === item ), 1 );
+  },
   findIdeaItem( item ) {
     return this.ideaItems.find( ideaItem => ideaItem.id === item.id );
   },
+  increasePoints( item ) { item.points++; },
+  decreasePoints( item ) { item.points--; },
   addIdeaItem( item ) {
     const ideaItem = this.findIdeaItem( item );
     if ( !ideaItem ) {
@@ -22,13 +25,13 @@ const IdeaAPI = {
   },
   init() {
     for ( let i = 1; i < noInitialIdeas; i++ ) {
-      this.ideaItems.push({
+      this.ideaItems.push( {
         'id': 'ID' + i,
         'heading': 'Idea #' + i,
         'description': 'Lorem ipsum dolor sit amet.',
         'added': '2015-01-05',
         'points': 0
-      });
+      } );
       lastUsedId = i;
     }
   }

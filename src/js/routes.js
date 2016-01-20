@@ -14,6 +14,7 @@ export default () => {
         <Route path="ideas" component={ IdeaList }/>
         <Route path="idea/:idea" component={ IdeaDetails } />
         <Route path="/add-idea" component ={ ManageIdea } />
+        <Route path="/edit-idea/:idea" component ={ ManageIdea } />
       </Route>
     </Router>
   );

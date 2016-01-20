@@ -16,5 +16,10 @@ export default {
     dispatch({
       actionType: ActionTypes.ADD_IDEA, idea
     });
+  },
+  updateIdea( idea ) {
+    dispatch({
+      actionType: ActionTypes.UPDATE_IDEA, idea
+    });
   }
 };

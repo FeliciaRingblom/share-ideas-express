@@ -1,4 +1,4 @@
-import { register } from '../dispatcher';
+import {register} from '../dispatcher';
 import ActionTypes from '../constants/actionTypes';
 import { EventEmitter } from 'events';
 import IdeaAPI from '../api/IdeaAPI';
@@ -20,6 +20,9 @@ const IdeaStore = Object.assign(EventEmitter.prototype, {
 
   getIdeas() {
     return IdeaAPI.ideaItems;
+  },
+  getIdeaById( ideaId ) {
+    return IdeaAPI.ideaItems.find( ({ id }) => id === ideaId );
   },
 
   dispatcherIndex: register( function( action ) {
