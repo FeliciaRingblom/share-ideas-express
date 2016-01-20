@@ -30,6 +30,9 @@ const IdeaStore = Object.assign(EventEmitter.prototype, {
     case ActionTypes.DISLIKE_IDEA:
       IdeaAPI.decreasePoints( action.idea );
       break;
+    case ActionTypes.ADD_IDEA:
+      IdeaAPI.addIdeaItem( action.idea );
+      break;
     default:
       break;
     }

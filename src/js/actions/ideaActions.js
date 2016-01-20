@@ -11,5 +11,10 @@ export default {
     dispatch({
       actionType: ActionTypes.DISLIKE_IDEA, idea
     });
+  },
+  createIdea( idea ) {
+    dispatch({
+      actionType: ActionTypes.ADD_IDEA, idea
+    });
   }
 };
